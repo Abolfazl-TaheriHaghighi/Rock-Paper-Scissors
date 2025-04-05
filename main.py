@@ -19,7 +19,6 @@ def Menu():
 
 
 def Help():
-    os.system("cls" if os.name == "nt" else "clear")
     print("""
  Welcome to Rock, Paper, Scissors Game! 🎮
 
@@ -45,19 +44,25 @@ def Help():
 
 🔹 **Other Commands:**  
 - Type **"Exit"** or **"0"** to quit the game.  
-- Type **"Return"** or **"1"** to return to the main menu. 
+- Type **"Back"** or **"1"** to return to the main menu. 
 
 
 Good luck! 🚀  
         """)
     x = input(f"Select or type the desired option\n>>")
     d = x.lower()
-    if d in ['exit' , '0']:
-        input("Press 'Enter' to exit.")
-        exit()
-    elif d in ['back' , '1']:
-        main()
-    
+    while True:
+          if d in ['exit' , '0']:
+               input("Press 'Enter' to exit.")
+               exit()
+          elif d in ['back' , '1']:
+               main()
+
+          else:
+               os.system("cls" if os.name == "nt" else "clear")
+               print(f"Invalid charechter!\n- Type **Exit** or **0** to quit the game.\n- Type **Back** or **1** to return to the main menu. ")
+               break
+    Help()
         
         
 
